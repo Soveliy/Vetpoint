@@ -28,8 +28,8 @@ gulp.task('scss', function(){
 gulp.task('css', function(){
   return gulp.src([
     'node_modules/normalize.css/normalize.css',
-    'assest/css/swiper.css',
-    'assest/css/wSelect.css',
+    // 'assest/css/swiper.css',
+    // 'assest/css/wSelect.css',
   ])
     .pipe(concat('_libs.scss'))
     .pipe(gulp.dest('app/scss'))
@@ -46,19 +46,19 @@ gulp.task('script', function(){
   .pipe(browserSync.reload({stream: true}))
 });
 
-gulp.task('js', function(){
-  return gulp.src([
-    'assest/js/mask.js',
-    'assest/js/swiper.js',
-    'assest/js/jquery.simplemarquee.js',
-    'assest/js/wSelect.js',
-    'assest/js/jquery.validate.min.js'
-  ])
-    .pipe(concat('libs.min.js'))
-    .pipe(uglify())
-    .pipe(gulp.dest('app/js'))
-    .pipe(browserSync.reload({stream: true}))
-});
+// gulp.task('js', function(){
+//   return gulp.src([
+//     // 'assest/js/mask.js',
+//     // 'assest/js/swiper.js',
+//     // 'assest/js/jquery.simplemarquee.js',
+//     // 'assest/js/wSelect.js',
+//     // 'assest/js/jquery.validate.min.js'
+//   ])
+//     .pipe(concat('libs.min.js'))
+//     .pipe(uglify())
+//     .pipe(gulp.dest('app/js'))
+//     .pipe(browserSync.reload({stream: true}))
+// });
 
 gulp.task('browser-sync', function() {
   browserSync.init({
@@ -123,4 +123,4 @@ gulp.task('watch', function(){
 
 gulp.task('build', gulp.series('clean', 'export'))
 
-gulp.task('default', gulp.parallel( 'css' ,'scss', 'js', 'browser-sync', 'watch'));
+gulp.task('default', gulp.parallel( 'css' ,'scss', 'browser-sync', 'watch'));
