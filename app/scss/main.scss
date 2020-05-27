@@ -3,6 +3,12 @@
 @import "_fonts";
 
 
+*{
+    margin: 0;
+    padding: 0;
+    outline: none !important;
+    color: $black;
+}
 html{
     height: 100%;
 }
@@ -15,4 +21,333 @@ body{
 }
 a{
    cursor: pointer;
+   text-decoration: none;
+   color: $black;
+}
+ul{
+    list-style: none;
+}
+button{
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+header{
+    /* 0 flex-grow, 0 flex-shrink, auto flex-basis */
+    flex: 0 0 auto;
+ }
+ .main{
+    /* 1 flex-grow, 0 flex-shrink, auto flex-basis */
+    flex: 1 0 auto;
+ }
+ footer{
+    /* 0 flex-grow, 0 flex-shrink, auto flex-basis */
+    flex: 0 0 auto;
+ }
+.nav-toggle {
+    display: none; 
+    position: relative;
+    margin-left: auto;
+    background: transparent;
+    border: 1px solid transparent;
+    z-index: 5;
+    @include for-md{
+        display: block;
+    }
+}
+.nav-toggle:focus {outline-width: 0;}
+.nav-toggle [class*='bar-'] {background-color: $blue; display: block;-webkit-transform: rotate(0deg);transform: rotate(0deg);-webkit-transition: .2s ease all;transition: .2s ease all;height: 3px;width: 17px;margin-bottom: 2px;}
+.nav-toggle .bar-bot {margin-bottom: 0;}
+.opened .bar-top {background-color: $blue; -webkit-transform: rotate(45deg);transform: rotate(45deg);-webkit-transform-origin: 0% 50%;transform-origin: 0% 50%;}
+.opened .bar-mid {opacity: 0;}
+.opened .bar-bot {background-color: $blue; -webkit-transform: rotate(45deg);transform: rotate(-45deg);-webkit-transform-origin: 15% 95%;transform-origin: 15% 95%;}
+.wrapper{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    @include for-md(){
+        overflow-x: hidden;
+    }
+}
+.container{
+    position: relative;
+    max-width: 1847px;
+    margin: 0 auto;
+    padding: 0 15px;
+    &--flex{
+        display: flex;
+    }
+    &--align-center{
+        align-items: center;
+    }
+    &--space-between{
+        justify-content: space-between;
+    }
+    &--flex-wrap{
+        flex-wrap: wrap;
+    }
+}
+.header{
+    padding: 40px 0 11px;
+    @include for-md{
+        padding-top: 10px;
+    }
+    &__logo{
+        @include for-xl{
+            display: block;
+            max-width: 130px;
+            flex-shrink: 0;
+        }
+        @include for-lit-md{
+            max-width: 110px;
+        }
+        img{
+            @include for-xl{
+                display: block;
+                width: 100%;
+                flex-shrink: 0;
+            }
+            @include for-lit-md{
+                display: block;
+                width: 100%;
+                flex-shrink: 0;
+            }
+        }
+    }
+    &__menu{
+        margin-left: 114px;
+        @include for-xxl{
+            margin-left: 30px;
+        }
+        @include for-md{
+            display: none;
+            position: absolute;
+            padding: 10px;
+            margin-left: 0;
+            width: 100%;
+            right: -10px;
+            top: 105%;
+            background-color: $white;
+            border-top: 3px solid $blue;
+            border-radius: 10px;
+            z-index: 2;
+        }
+        ul{
+            a{
+                @include for-xl{
+                    font-size: 14px;
+                    line-height: 18px;
+                }
+            }
+            @include for-md{
+                margin-bottom: 20px !important;
+                flex-direction: column !important;
+                align-items: center !important;
+            }
+        }
+        li + li{
+            @include for-md{
+                margin-left: 0 !important;
+            }
+        }
+        
+    }
+    &__call-block{
+        margin-left: auto;
+        margin-top: -31px;
+        @include for-md{
+            display: flex;
+            flex-direction: column;
+            margin-top: 0;
+        }
+        
+    }
+}
+.menu{
+    
+    ul{
+        display: flex;
+        align-items: center;
+        
+    }
+    li + li{
+        margin-left: 55px;
+        @include for-xxl{
+            margin-left: 20px;
+        }
+        @include for-xl{
+            margin-left: 12px;
+        }
+        
+    }
+    a{
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+        transition: .3s;
+        &:hover{
+            color: $blue;
+        }
+    }
+}
+.number{
+    font-size: 24px;
+    line-height: 27px;
+    text-align: right;
+    font-weight: 700;
+    &:hover{
+        text-decoration: underline;
+    }
+    &--blue{
+        color: $blue;
+    }
+    &--white{
+        color: $white;
+    }
+}
+.call-block{
+    @include for-md{
+        display: none;
+    }
+    &__number{
+        display: block;
+        margin-bottom: 26px;
+        @include for-xl{
+            margin-bottom: 10px;
+        }
+    }
+    &__button{
+        @include for-xl{
+            margin-left: 10px;
+            padding: 10px !important;
+            font-size: 16px !important;
+        }
+    }
+    &--adaptive{
+        display: none;
+        @include for-md{
+            display: flex;
+        }
+        .call-block__number{
+            @include for-md{
+                text-align: center;
+            }
+        }
+    }
+}
+.button{
+    padding: 19px;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    box-sizing: border-box;
+    font-weight: 700;
+    font-size: 20px;
+    transition: .3s;
+    &--blue{
+        background-color: $blue;
+        color: $white;
+        &:hover{
+            border-color: $blue;
+            color: $blue;
+            background-color: $white;
+        }
+    }
+    &--white{
+        background-color: $white;
+        color: $blue;
+        &:hover{
+            border-color: $white;
+            color: $white;
+            background-color: $blue;
+        }
+    }
+}
+.footer{
+    padding: 70px 0 140px;
+    background-color: $blue;
+    @include for-md{
+        padding-bottom: 100px;
+    }
+    .container{
+        @include for-md{
+            flex-direction: column;
+        }
+    }
+    &__logo{
+        @include for-xl{
+            display: block;
+            max-width: 130px;
+            flex-shrink: 0;
+        }
+        @include for-lit-md{
+            max-width: 155px;
+        }
+        img{
+            @include for-xl{
+                display: block;
+                width: 100%;
+                flex-shrink: 0;
+            }
+            @include for-lit-md{
+                display: block;
+                width: 100%;
+                flex-shrink: 0;
+            }
+        }
+    }
+    &__number{
+        margin-left: 200px;
+        font-size: 48px;
+        @include for-xl{
+            margin-left: 0;
+        }
+        @include for-md{
+            margin-top: 75px;
+            margin-left: 0;
+            font-size: 40px;
+        }
+    }
+    &__button{
+        padding: 29px 27px;
+        font-size: 28.7px;
+        @include for-md{
+            padding: 29px 17px;
+            margin-top: 68px;
+            width: 100%;
+        }
+    }
+    &__menu{
+        margin: 81px auto 0;
+        @include for-md{
+            margin-top: 75px;
+        }
+        a{
+            color: $white;
+            &:hover{
+                color: $white;
+            }
+        }
+        li + li{
+            margin-left: 61px;
+            @include for-xxl{
+                margin-left: 40px;
+            }
+            @include for-md{
+                margin-left: 0;
+                margin-top: 20px;
+            }
+        }
+        ul{
+            a{
+                @include for-xl{
+                    font-size: 18px;
+                    line-height: 18px;
+                }
+            }
+            @include for-md{
+                flex-direction: column;
+            }
+        }
+    }
 }

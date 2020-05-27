@@ -1,16 +1,12 @@
-$dark:#292929;
-$red:#D96C6C;
-$black-dark:#6C1515;
-$white-brown:#D99A6C;
-$white:#fff;
-$grey:#ABABAB;
-$black:#000000;
-$event-future: #FBF5F0;
-$event-past: #F8F8F8;
-$Rubic:'Rubik', sans-serif;
-$Root:'PT Root UI',sans-serif;
+$black:#292929;
+$white: #ffffff;
+$blue: #0063a1;
+
+@mixin for-xxl {
+  @media (max-width: 1805px) { @content; }
+}
 @mixin for-xl {
-    @media (max-width: 1300px) { @content; }
+    @media (min-width: 1024px) and (max-width: 1470px) { @content; }
   }
 
 @mixin for-lg {
