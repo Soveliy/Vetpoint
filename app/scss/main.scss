@@ -353,14 +353,24 @@ header{
     }
 }
 .stock{
+    @include for-md{
+        padding-top: 18px;
+    }
     &__item{
         display: flex;
         align-items: center;
+        @include for-md{
+            flex-direction: column;
+        }
     }
     &__img-container{
         display: block;
         width: 50%;
         height: 481px;
+        @include for-md{
+            width: 100%;
+            height: auto;
+        }
     }
     &__img{
         display: block;
@@ -374,6 +384,18 @@ header{
         min-height: 481px;
         box-sizing: border-box;
         background-color: $blue;
+        @include for-xl{
+            padding-left: 35px;
+        }
+        @include for-md{
+            padding-top: 60px;
+            padding-bottom: 70px;
+            width: 100%;
+            min-height: 0;
+        }
+        @include for-tiny-tablet{
+            padding: 30px 0 25px 10px;
+        }
     }
     &__title{
         display: inline-block;
@@ -394,10 +416,26 @@ header{
             left: 0;
             bottom: 0;
             transition: .4s;
+            @include for-tiny-tablet{
+                width: 147px;
+                height: 5px;
+            }
         }
         &:hover::after{
             width: calc(100%);
         }
+        @include for-xl{
+            font-size: 48px;
+        }
+        @include for-md{
+            width: 100%;
+        }
+        @include for-tiny-tablet{
+            padding-bottom: 12px;
+            font-size: 23px;
+            line-height: 27px;
+        }
+        
     }
     &__text{
         margin-top: 54px;
@@ -406,8 +444,18 @@ header{
         line-height: 30px;
         color: $white;
         letter-spacing: 0.7px;
+        @include for-xl{
+            font-size: 20px;
+            line-height: 24px;
+        }
+        @include for-tiny-tablet{
+            margin-top: 19px;
+            font-size: 17px;
+            line-height: 21px;
+        }
     }
     .swiper-button-next{
+        right: 52px;
         &::after{
             position: absolute;
             width: 34px;
@@ -416,10 +464,16 @@ header{
             background-image: url(../images/slider-buttons/next.png);
             background-size: cover;
             background-repeat: no-repeat;
-            right: 52px;
+        }
+        @include for-xl{
+            top: 75%;
+        }
+        @include for-md{
+            display: none;
         }
     }
     .swiper-button-prev{
+        left: 52px;
         &::after{
             position: absolute;
             width: 34px;
@@ -428,12 +482,26 @@ header{
             background-image: url(../images/slider-buttons/prev.png);
             background-size: cover;
             background-repeat: no-repeat;
-            left: 52px;
+        }
+        @include for-xl{
+            top: 75%;
+        }
+        @include for-md{
+            display: none;
         }
     }
 }
 .description{
     padding: 96px 240px 29px;
+    @include for-xl{
+        padding: 70px 100px 15px;
+    }
+    @include for-md{
+        padding: 70px 0 15px;
+    }
+    @include for-tiny-tablet{
+        padding-top: 31px;
+    }
     &__row{
         position: relative;
         display: flex;
@@ -445,6 +513,17 @@ header{
         width: 33.3333333%;
         box-sizing: border-box;
         margin-bottom: 89px;
+        @include for-md{
+            width: 50%;
+        }
+        @include for-tiny-tablet{
+            margin: 0 auto;
+            width: 100%;
+            padding: 16px 15px 50px;
+            border: 4px solid #f0f0f0;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
     }
     &__img-container{
         display: flex;
@@ -453,16 +532,47 @@ header{
         height: 122px;
         width: 100%;
         margin-bottom: 21px;
+        @include for-tiny-tablet{
+            margin-bottom: 17px;
+            height: 70px;
+        }
     }
     &__img{
         display: block;
         margin: 0 auto;
+        @include for-tiny-tablet{
+            height: 100%;
+        }
     }
     &__text{
         font-weight: 700;
         font-size: 24px;
         line-height: 28px;
         text-align: center;
+        @include for-tiny-tablet{
+            height: 100%;
+            font-size: 17px;
+            line-height: 21px;
+            br{
+                display: none;
+            }
+        }
+        
+    }
+    &__list{
+        display: none;
+        margin-top: 22px;
+        @include for-tiny-tablet{
+            display: block;
+        }
+    }
+    &__list-item{
+        text-align: center;
+        font-size: 14px;
+        line-height: 18px;
+    }
+    &__list-item + &__list-item{
+        margin-top: 7px;
     }
 }
 .title{
@@ -470,9 +580,16 @@ header{
     font-size: 64px;
     line-height: 67px;
     letter-spacing: 1.6px;
+    @include for-tiny-tablet{
+        font-size: 24px;
+        line-height: 30px;
+    }
 }
 .services{
     padding: 0 100px 129px;
+    @include for-md{
+        padding: 32px 15px 67px;
+    }
     &__title{
         text-align: center;
     }
@@ -480,6 +597,29 @@ header{
     &__swiper{
         position: relative;
         margin-top: 69px;
+        @include for-tiny-tablet{
+            margin-top: 23px;
+        }
+    }
+    .swiper-container{
+        @include for-tiny-tablet{
+            margin-right: -20px;
+        }
+    }
+    .swiper-wrapper{
+        @include for-md{
+            flex-wrap: wrap;
+            transform: none !important;
+            margin-right: -20px;
+        }
+    }
+    .swiper-slide{
+        @include for-md{
+            width: 33.333333% !important;
+            margin-right: 0 !important;
+            margin-bottom: 26px;
+            box-sizing: border-box;
+        }
     }
     .swiper-button-next{
         right: -53px;
@@ -493,6 +633,9 @@ header{
             background-size: cover;
             background-repeat: no-repeat;
         }
+        @include for-md{
+            display: none;
+        }
     }
     .swiper-button-prev{
         left: -53px;
@@ -505,6 +648,9 @@ header{
             background-image: url(../images/slider-buttons/prev-blue.png);
             background-size: cover;
             background-repeat: no-repeat;
+        }
+        @include for-md{
+            display: none;
         }
     }
 }
@@ -524,6 +670,23 @@ header{
         &:hover{
             border-color: $blue;
         }
+        @include for-md{
+            width: 120px;
+            height: 120px;
+        }
+        @include for-tiny-tablet{
+            width: 65px;
+            height: 65px;
+            margin-bottom: 8px;
+            br{
+                display: none;
+            }
+        }
+    }
+    &__img{
+        @include for-md{
+            height: 70%;
+        }
     }
     &__text{
         display: block;
@@ -536,10 +699,20 @@ header{
         &:hover{
             color: $blue;
         }
+        @include for-tiny-tablet{
+            font-size: 13px;
+            line-height: 17px;
+        }
     }
 }
 .doctors{
     padding: 0 185px 100px;
+    @include for-md{
+        padding: 0 0 100px;
+    }
+    @include for-tiny-tablet{
+        padding-bottom: 26px;
+    }
     &__title{
         text-align: center;
     }
@@ -548,6 +721,10 @@ header{
         flex-wrap: wrap;
         margin-top: 72px;
         margin-right: -70px;
+        @include for-md{
+            margin-top: 36px;
+            margin-right: -55px;
+        }
     }
     
     &__container{
@@ -555,6 +732,14 @@ header{
         box-sizing: border-box;
         padding-right: 70px;
         margin-bottom: 20px;
+        @include for-xl{
+            width: 33.33333333%;
+        }
+        @include for-md{
+            width: 50%;
+            padding-right: 55px;
+            margin: 0 auto 20px;
+        }
     }
     
 }
@@ -564,6 +749,10 @@ header{
         height: 318px;
         width: 223px;
         margin: 0 auto;
+        @include for-tiny-tablet{
+            height: 202px;
+            width: 140px;
+        }
     }
     &__img{
         display: block;
@@ -588,10 +777,18 @@ header{
             }
             
         }
+        @include for-tiny-tablet{
+            margin-top: 6px;
+            font-size: 16px;
+            line-height: 19px;
+        }
     }
     &__name-big-font{
         font-size: 28px;
         transition: .3s;
+        @include for-tiny-tablet{
+            font-size: 19px;
+        }
     }
     &__text{
         margin-top: 14px;
@@ -599,10 +796,21 @@ header{
         line-height: 20px;
         letter-spacing: 0.4px;
         text-align: center;
+        @include for-tiny-tablet{
+            margin-top: 10px;
+            font-size: 11px;
+            line-height: 13px;
+            br{
+                display: none;
+            }
+        }
     }
 }
 .reviews{
     padding: 0 0 246px;
+    @include for-tiny-tablet{
+        padding-bottom: 50px;
+    }
     &__swiper{
         position: relative;
     }
@@ -619,6 +827,18 @@ header{
         font-size: 28px;
         line-height: 32px;
         letter-spacing: 0.7px;
+        @include for-xl{
+            padding: 0 200px;
+        }
+        @include for-md{
+            padding: 0 50px;
+        }
+        @include for-tiny-tablet{
+            padding: 0 30px;
+            margin-top: 36px;
+            font-size: 16px;
+            line-height: 20px;
+        }
     }
     &__name{
         display: block;
@@ -629,10 +849,20 @@ header{
         font-size: 28px;
         line-height: 32px;
         letter-spacing: 0.7px;
+        @include for-tiny-tablet{
+            margin-top: 20px;
+            font-size: 16px;
+            line-height: 20px;
+        }
     }
     &__date{
         display: block;
         margin-top: 37px;
+        @include for-tiny-tablet{
+            margin-top: 5px;
+            font-size: 16px;
+            line-height: 20px;
+        }
     }
     .swiper-button-next{
         right: 122px;
@@ -645,6 +875,14 @@ header{
             background-image: url(../images/slider-buttons/next-thin.png);
             background-size: cover;
             background-repeat: no-repeat;
+            @include for-tiny-tablet{
+                width: 14px;
+                height: 25px;
+            }
+        }
+        @include for-md{
+            top: 50%;
+            right: 0;
         }
     }
     .swiper-button-prev{
@@ -658,6 +896,14 @@ header{
             background-image: url(../images/slider-buttons/prev-thin.png);
             background-size: cover;
             background-repeat: no-repeat;
+            @include for-tiny-tablet{
+                width: 14px;
+                height: 25px;
+            }
+        }
+        @include for-md{
+            top: 50%;
+            left: 0;
         }
     }
 }

@@ -34,12 +34,28 @@ $(".nav-toggle").click(function() {
     slidesPerView: 6,
     spaceBetween: 80,
     autoplay:true,
-    loop:true,
     navigation: {
         nextEl: $(this).parent().find('.swiper-button-next'),
         prevEl: $(this).parent().find('.swiper-button-prev'),
     },
-    
+    breakpoints: {
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 80,
+      },
+      1300: {
+        slidesPerView: 4,
+        spaceBetween: 80,
+      },
+      1600: {
+        slidesPerView: 5,
+        spaceBetween: 80,
+      },
+      1800: {
+        slidesPerView: 6,
+        spaceBetween: 80,
+      },
+    } 
   });
   });
   $('.reviews .swiper-container').each(function(){
