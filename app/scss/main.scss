@@ -243,6 +243,7 @@ header{
     box-sizing: border-box;
     font-weight: 700;
     font-size: 20px;
+    line-height: 22px;
     transition: .3s;
     &--blue{
         background-color: $blue;
@@ -432,7 +433,7 @@ header{
     }
 }
 .description{
-    padding: 96px 240px 50px;
+    padding: 96px 240px 29px;
     &__row{
         position: relative;
         display: flex;
@@ -460,49 +461,25 @@ header{
     &__text{
         font-weight: 700;
         font-size: 24px;
+        line-height: 28px;
         text-align: center;
     }
 }
 .title{
     font-weight: 700;
     font-size: 64px;
+    line-height: 67px;
     letter-spacing: 1.6px;
 }
 .services{
-    padding: 0 100px 137px;
+    padding: 0 100px 129px;
     &__title{
         text-align: center;
     }
-    &__img-container{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 202px;
-        height: 202px;
-        margin: 0 auto 23px;
-        box-sizing: border-box;
-        border: 4px solid transparent;
-        border-radius: 50%;
-        background-color: $light-blue;
-        transition: .3s;
-        &:hover{
-            border-color: $blue;
-        }
-    }
-    &__text{
-        display: block;
-        font-weight: 700;
-        font-size: 24px;
-        text-align: center;
-        letter-spacing: 0.6px;
-        transition: .3s;
-        &:hover{
-            color: $blue;
-        }
-    }
+    
     &__swiper{
         position: relative;
-        margin-top: 96px;
+        margin-top: 69px;
     }
     .swiper-button-next{
         right: -53px;
@@ -531,17 +508,57 @@ header{
         }
     }
 }
+.services-item{
+    &__img-container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 202px;
+        height: 202px;
+        margin: 0 auto 18px;
+        box-sizing: border-box;
+        border: 4px solid transparent;
+        border-radius: 50%;
+        background-color: $light-blue;
+        transition: .3s;
+        &:hover{
+            border-color: $blue;
+        }
+    }
+    &__text{
+        display: block;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 28px;
+        text-align: center;
+        letter-spacing: 0.6px;
+        transition: .3s;
+        &:hover{
+            color: $blue;
+        }
+    }
+}
 .doctors{
-    padding: 0 185px 119px;
+    padding: 0 185px 100px;
     &__title{
         text-align: center;
     }
     &__row{
         display: flex;
         flex-wrap: wrap;
-        margin-top: 100px;
+        margin-top: 72px;
         margin-right: -70px;
     }
+    
+    &__container{
+        width: 20%;
+        box-sizing: border-box;
+        padding-right: 70px;
+        margin-bottom: 20px;
+    }
+    
+}
+.doctor-item{
     &__img-container{
         display: block;
         height: 318px;
@@ -555,12 +572,6 @@ header{
         object-fit: fill;
         background-color: #e5e5e5;
     }
-    &__container{
-        width: 20%;
-        box-sizing: border-box;
-        padding-right: 70px;
-        margin-bottom: 20px;
-    }
     &__name{
         display: block;
         margin-top: 12px;
@@ -572,7 +583,7 @@ header{
         transition: .3s;
         &:hover{
             color: $blue;
-            .doctors__name-big-font{
+            .doctor-item__name-big-font{
                color: $blue; 
             }
             
@@ -602,7 +613,7 @@ header{
         text-align: center;
     }
     &__text{
-        margin: 112px auto 0;
+        margin: 85px auto 0;
         padding: 0 435px;
         text-align: center;
         font-size: 28px;
@@ -616,6 +627,7 @@ header{
         text-align: center;
         font-weight: 700;
         font-size: 28px;
+        line-height: 32px;
         letter-spacing: 0.7px;
     }
     &__date{
