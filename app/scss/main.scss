@@ -72,7 +72,7 @@ header{
 }
 .container{
     position: relative;
-    max-width: 1847px;
+    max-width: 1817px;
     margin: 0 auto;
     padding: 0 15px;
     &--flex{
@@ -348,6 +348,304 @@ header{
             @include for-md{
                 flex-direction: column;
             }
+        }
+    }
+}
+.stock{
+    &__item{
+        display: flex;
+        align-items: center;
+    }
+    &__img-container{
+        display: block;
+        width: 50%;
+        height: 481px;
+    }
+    &__img{
+        display: block;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+    &__text-container{
+        padding: 95px 0 176px 71px;
+        width: 50%;
+        min-height: 481px;
+        box-sizing: border-box;
+        background-color: $blue;
+    }
+    &__title{
+        display: inline-block;
+        position: relative;
+        padding-bottom: 30px;
+        font-weight: 900;
+        text-transform: uppercase;
+        font-size: 56px;
+        line-height: 60px;
+        color: $white;
+        letter-spacing: 1.4px;
+        &::after{
+            content: "";
+            position: absolute;
+            height: 9px;
+            width: calc(252px);
+            background-color: $white;
+            left: 0;
+            bottom: 0;
+            transition: .4s;
+        }
+        &:hover::after{
+            width: calc(100%);
+        }
+    }
+    &__text{
+        margin-top: 54px;
+        font-weight: 600;
+        font-size: 28px;
+        line-height: 30px;
+        color: $white;
+        letter-spacing: 0.7px;
+    }
+    .swiper-button-next{
+        &::after{
+            position: absolute;
+            width: 34px;
+            height: 55px;
+            font-size: 0;
+            background-image: url(../images/slider-buttons/next.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            right: 52px;
+        }
+    }
+    .swiper-button-prev{
+        &::after{
+            position: absolute;
+            width: 34px;
+            height: 55px;
+            font-size: 0;
+            background-image: url(../images/slider-buttons/prev.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            left: 52px;
+        }
+    }
+}
+.description{
+    padding: 96px 240px 50px;
+    &__row{
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        overflow: hidden;
+    }
+    &__container{
+        position: relative;
+        width: 33.3333333%;
+        box-sizing: border-box;
+        margin-bottom: 89px;
+    }
+    &__img-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 122px;
+        width: 100%;
+        margin-bottom: 21px;
+    }
+    &__img{
+        display: block;
+        margin: 0 auto;
+    }
+    &__text{
+        font-weight: 700;
+        font-size: 24px;
+        text-align: center;
+    }
+}
+.title{
+    font-weight: 700;
+    font-size: 64px;
+    letter-spacing: 1.6px;
+}
+.services{
+    padding: 0 100px 137px;
+    &__title{
+        text-align: center;
+    }
+    &__img-container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 202px;
+        height: 202px;
+        margin: 0 auto 23px;
+        box-sizing: border-box;
+        border: 4px solid transparent;
+        border-radius: 50%;
+        background-color: $light-blue;
+        transition: .3s;
+        &:hover{
+            border-color: $blue;
+        }
+    }
+    &__text{
+        display: block;
+        font-weight: 700;
+        font-size: 24px;
+        text-align: center;
+        letter-spacing: 0.6px;
+        transition: .3s;
+        &:hover{
+            color: $blue;
+        }
+    }
+    &__swiper{
+        position: relative;
+        margin-top: 96px;
+    }
+    .swiper-button-next{
+        right: -53px;
+        top: 103px;
+        &::after{
+            position: absolute;
+            width: 34px;
+            height: 55px;
+            font-size: 0;
+            background-image: url(../images/slider-buttons/next-blue.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    }
+    .swiper-button-prev{
+        left: -53px;
+        top: 103px;
+        &::after{
+            position: absolute;
+            width: 34px;
+            height: 55px;
+            font-size: 0;
+            background-image: url(../images/slider-buttons/prev-blue.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    }
+}
+.doctors{
+    padding: 0 185px 119px;
+    &__title{
+        text-align: center;
+    }
+    &__row{
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 100px;
+        margin-right: -70px;
+    }
+    &__img-container{
+        display: block;
+        height: 318px;
+        width: 223px;
+        margin: 0 auto;
+    }
+    &__img{
+        display: block;
+        height: 100%;
+        width: 100%;
+        object-fit: fill;
+        background-color: #e5e5e5;
+    }
+    &__container{
+        width: 20%;
+        box-sizing: border-box;
+        padding-right: 70px;
+        margin-bottom: 20px;
+    }
+    &__name{
+        display: block;
+        margin-top: 12px;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 30px;
+        letter-spacing: 0.7px;
+        text-align: center;
+        transition: .3s;
+        &:hover{
+            color: $blue;
+            .doctors__name-big-font{
+               color: $blue; 
+            }
+            
+        }
+    }
+    &__name-big-font{
+        font-size: 28px;
+        transition: .3s;
+    }
+    &__text{
+        margin-top: 14px;
+        font-size: 16px;
+        line-height: 20px;
+        letter-spacing: 0.4px;
+        text-align: center;
+    }
+}
+.reviews{
+    padding: 0 0 246px;
+    &__swiper{
+        position: relative;
+    }
+    &__title{
+        text-align: center;
+    }
+    &__slide{
+        text-align: center;
+    }
+    &__text{
+        margin: 112px auto 0;
+        padding: 0 435px;
+        text-align: center;
+        font-size: 28px;
+        line-height: 32px;
+        letter-spacing: 0.7px;
+    }
+    &__name{
+        display: block;
+        margin-top: 65px;
+        width: 100%;
+        text-align: center;
+        font-weight: 700;
+        font-size: 28px;
+        letter-spacing: 0.7px;
+    }
+    &__date{
+        display: block;
+        margin-top: 37px;
+    }
+    .swiper-button-next{
+        right: 122px;
+        top: 59%;
+        &::after{
+            position: absolute;
+            width: 34px;
+            height: 63px;
+            font-size: 0;
+            background-image: url(../images/slider-buttons/next-thin.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    }
+    .swiper-button-prev{
+        left: 122px;
+        top: 59%;
+        &::after{
+            position: absolute;
+            width: 34px;
+            height: 63px;
+            font-size: 0;
+            background-image: url(../images/slider-buttons/prev-thin.png);
+            background-size: cover;
+            background-repeat: no-repeat;
         }
     }
 }
