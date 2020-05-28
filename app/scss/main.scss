@@ -12,6 +12,9 @@
 html{
     height: 100%;
 }
+h1{
+    margin: 0;
+}
 body{
     height: 100%;
     font-family: 'Gilroy', sans-serif;
@@ -1049,5 +1052,308 @@ header{
     margin-top: 105px;
     @include for-md{
         display: none;
+    }
+}
+.about{
+    padding-left: 165px;
+    padding-top: 58px;
+    
+    @include for-xxl{
+        padding-left: 50px;
+    }
+    @include for-md{
+        margin-top: 50px;
+        padding: 0 15px;
+    }
+    @include for-tiny-tablet{
+        margin-top: 25px;
+        padding: 0 8px;
+    }
+    &__title{
+        position: relative;
+        display: block;
+        margin-bottom: 20px;
+        padding-bottom: 30px;
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 52px;
+        color: $blue;
+        &::after{
+            content: "";
+            position: absolute;
+            width: 114px;
+            height: 7px;
+            background-color: $blue;
+            bottom: 0;
+            left: 0;
+            @include for-tiny-tablet{
+                width: 19px;
+                height: 4px;
+            }
+        }
+        @include for-tiny-tablet{
+            margin-bottom: 10px;
+            padding-bottom: 0;
+            font-size: 25px;
+        }
+    }
+    &__img-container{
+        margin-left: 48px;
+        @include for-xxl{
+            width: 50%;
+        }
+        @include for-md{
+            width: 100%;
+            margin-left: 0;
+            margin-top: 40px;
+        }
+    }
+    &__img{
+        @include for-xxl{
+            display: block;
+            width: 100%;
+        }
+        
+        
+    }
+    p{
+        font-size: 28px;
+        line-height: 40px;
+        @include for-md{
+            text-align: center;
+        }
+        @include for-tiny-tablet{
+            font-size: 16px;
+            line-height: 26px;
+        }
+        
+        
+    }
+    
+}
+.about-container{
+        display: flex;
+        align-items: center;
+        @include for-md{
+            flex-direction: column;
+        }
+        &--mb{
+            margin-bottom: 23px;
+        }
+        &--text-left{
+            padding-left: 165px;
+            @include for-xl{
+                padding-left: 100px;
+            }
+            @include for-md{
+                padding: 0 20px;
+            }
+            @include for-tiny-tablet{
+                padding: 0 8px;
+            }
+        }
+        &--space-between{
+            justify-content: space-between;
+        }
+        &--text-right{
+            padding-right: 165px;
+            flex-direction: row-reverse;
+            .about__img-container{
+                margin-left: 0;
+                margin-right: 30px;
+                @include for-md{
+                    margin-right: 0;
+                }
+            }
+            @include for-xl{
+                padding-right: 100px;
+            }
+            @include for-md{
+                flex-direction: column;
+                padding: 0 20px;
+            }
+            @include for-tiny-tablet{
+                padding: 0 8px;
+            }
+            
+        }
+        &--align-start{
+            align-items: flex-start;
+            @include for-xl{
+                align-items: center;
+            }
+        }
+        p{
+            text-align: left;
+            font-size: 28px;
+            line-height: 40px;
+            @include for-xxl{
+                width: 50%;
+            }
+            @include for-xl{
+                font-size: 24px;
+                line-height: 32px;
+            }
+            @include for-md{
+                width: 100%;
+            }
+            @include for-tiny-tablet{
+                font-size: 16px;
+                line-height: 26px;
+            }
+        }
+        
+}
+.about-target{
+    padding: 80px 0 87px;
+    margin-top: 63px;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 44px;
+    text-align: center;
+    background-color: $blue;
+    color: $white;
+    @include for-xl{
+        br{
+            display: none;  
+        }
+    }
+    @include for-tiny-tablet{
+        padding: 40px 0 30px;
+        font-size: 22px;
+        line-height: 26px;
+    }
+}
+.about-list{
+    padding-left: 165px;
+    padding-top: 100px;
+    @include for-md{
+        display: none;
+        padding-left: 50px;
+    }
+    @include for-tiny-tablet{
+        padding: 0 8px;
+        margin-top: 58px;
+    }
+    &__title{
+        display: none;
+        margin-bottom: 26px;
+        font-size: 22px;
+        line-height: 26px;
+        font-weight: 700;
+        color: $blue;
+        @include for-tiny-tablet{
+            display: block;
+
+        }
+    }
+    &__subtitle{
+        display: none;
+        font-size: 17px;
+        line-height: 20px;
+        @include for-tiny-tablet{
+            display: block;
+        }
+    }
+    &__list{
+        width: 68%;
+        @include for-md{
+            width: 100%;
+        }
+        @include for-tiny-tablet{
+            margin-top: 35px;
+        }
+    }
+    &__first-line{
+        display: block;
+        padding-bottom: 10px;
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 31px;
+        color: $blue;
+        &::before{
+            content: "";
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            border: 4px solid $blue;
+            box-sizing: border-box;
+            left: 3px;
+            top: 5px;
+            @include for-tiny-tablet{
+                border-width: 3px;
+            }
+        }
+        @include for-tiny-tablet{
+            padding-bottom: 2px;
+            font-size: 17px;
+            line-height: 22px;
+        }
+    }
+    &__list-item{
+        position: relative;
+        padding-left: 42px;
+        font-size: 24px;
+        line-height: 28px;
+        @include for-tiny-tablet{
+            padding-left: 35px;
+            font-size: 14px;
+            line-height: 18px;
+        }
+    }
+    &__list-item + &__list-item{
+        margin-top: 45px;
+        @include for-tiny-tablet{
+            margin-top: 34px;
+        }
+    }
+    &--adaptive{
+        display: none;
+        @include for-md{
+            display: block;
+        }
+    }
+}
+.about-img-containers{
+    margin-top: 98px;
+    @include for-tiny-tablet{
+        margin-top: 0;
+    }
+    &__title{
+        margin-top: 55px;
+        margin-bottom: 43px;
+        display: block;
+        font-size: 44px;
+        line-height: 48px;
+        font-weight: 700;
+        color: $blue;
+        @include for-xl{
+            font-size: 35px;
+        }
+        @include for-tiny-tablet{
+            margin-top: 63px;
+            margin-bottom: 17px;
+            font-size: 20px;
+            line-height: 25px;
+        }
+    }
+    p{
+        margin-top: 0;
+        font-size: 24px;
+        max-width: 730px;
+        @include for-xl{
+            font-size: 18px;
+        }
+        @include for-tiny-tablet{
+            font-size: 16px;
+            line-height: 27px;
+        }
+    }
+}
+.about-container + .about-container{
+    margin-top: 78px;
+    @include for-tiny-tablet{
+        margin-top: 47px;
     }
 }
