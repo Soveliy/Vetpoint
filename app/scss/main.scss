@@ -87,6 +87,11 @@ header{
     &--flex-wrap{
         flex-wrap: wrap;
     }
+    &--mini-p{
+        @include for-tiny-tablet{
+            padding: 0 8px;
+        }
+    }
 }
 .header{
     padding: 40px 0 11px;
@@ -308,6 +313,9 @@ header{
             margin-left: 0;
             font-size: 40px;
         }
+        @include for-lit-mob{
+            font-size: 37px;
+        }
     }
     &__button{
         padding: 29px 27px;
@@ -316,6 +324,9 @@ header{
             padding: 29px 17px;
             margin-top: 68px;
             width: 100%;
+        }
+        @include for-lit-mob{
+            font-size: 24.7px;
         }
     }
     &__menu{
@@ -701,7 +712,11 @@ header{
         }
         @include for-tiny-tablet{
             font-size: 13px;
-            line-height: 17px;
+            line-height: 14px;
+        }
+        @include for-lit-mob{
+            font-size: 11px;
+
         }
     }
 }
@@ -725,6 +740,9 @@ header{
             margin-top: 36px;
             margin-right: -55px;
         }
+        @include for-lit-mob{
+            margin-right: 0;
+        }
     }
     
     &__container{
@@ -740,6 +758,9 @@ header{
             padding-right: 55px;
             margin: 0 auto 20px;
         }
+        @include for-lit-mob{
+            padding-right: 10px;
+        }
     }
     
 }
@@ -752,6 +773,10 @@ header{
         @include for-tiny-tablet{
             height: 202px;
             width: 140px;
+        }
+        @include for-lit-mob{
+            height: 179px;
+            width: auto;
         }
     }
     &__img{
@@ -780,7 +805,7 @@ header{
         @include for-tiny-tablet{
             margin-top: 6px;
             font-size: 16px;
-            line-height: 19px;
+            line-height: 16px;
         }
     }
     &__name-big-font{
@@ -905,5 +930,124 @@ header{
             top: 50%;
             left: 0;
         }
+    }
+}
+.breadcrumbs{
+    margin-top: 30px;
+    @include for-tiny-tablet{
+        margin-top: 13px;
+    }
+    &__list{
+        display: flex;
+        align-items: center;
+        
+    }
+    &__link{
+        position: relative;
+        display: block;
+        font-weight: 500;
+        font-size: 20px;
+        padding-right: 37px;
+        margin-right: 26px;
+        &::after{
+            content: "";
+            position: absolute;
+            width: 13px;
+            height: 18px;
+            background-image: url(../images/breadcrumbs/1.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            @include for-tiny-tablet{
+                width: 7px;
+                height: 13px;
+                background-size: contain;
+                background-position: center;
+            }
+        }
+        &--last{
+            color: $light-blue;
+        }
+        @include for-tiny-tablet{
+            padding-right: 20px;
+            margin-right: 10px;
+            font-size: 13px;
+        }
+    }
+    &__item:last-child &__link{
+        padding-right: 0;
+        margin-right: 0;
+        &::after{
+            display: none;
+        }
+    }
+}
+.contacs{
+    padding-top: 48px;
+    @include for-tiny-tablet{
+        padding-top: 34px;
+    }
+    &__title{
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 50px;
+        color: #141414;
+        @include for-tiny-tablet{
+            font-size: 24px;
+            line-height: 28px;
+        }
+    }
+    &__subtitle{
+        margin-top: 100px;
+        font-size: 36px;
+        line-height: 40px;
+        font-weight: 500;
+        &--last{
+            margin-top: 140px;
+            font-weight: 700;
+            @include for-md{
+                margin-bottom: 40px;
+            }
+        }
+        @include for-tiny-tablet{
+            margin-top: 30px;
+            font-size: 20px;
+            line-height: 24px;
+        }
+        
+    }
+    &__text{
+        margin-top: 72px;
+        font-weight: 500;
+        font-size: 28px;
+        line-height: 32px;
+        &--blue{
+            color: $blue;
+        }
+        &--mt-big{
+            margin-top: 65px !important;
+            @include for-tiny-tablet{
+                margin-top: 35px !important;
+            }
+        }
+        @include for-tiny-tablet{
+            margin-top: 32px;
+            font-size: 16px;
+            line-height: 21px;
+        }
+    }
+    &__text + &__text{
+        margin-top: 41px;
+        @include for-tiny-tablet{
+            margin-top: 17px;
+        }
+    }
+}
+.map{
+    margin-top: 105px;
+    @include for-md{
+        display: none;
     }
 }

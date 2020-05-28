@@ -42,5 +42,5 @@ $light-blue: #01abde;
     @media (min-width: 650px) { @content; }
   }
   @mixin for-lit-mob {
-    @media (max-width: 350px) { @content; }
+    @media (max-width: 360px) { @content; }
     }
