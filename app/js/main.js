@@ -74,38 +74,21 @@ $(".nav-toggle").click(function() {
   });
   });
 
-  // $('.players__slider .swiper-container').each(function(){
-  //   var events_slider = new Swiper(this, {
-  //     watchOverflow:true,
-  //     slidesPerView: 3,
-  //   slidesPerGroup: 3,
-  //   spaceBetween: 10,
-  //   autoplay:true,
-  //   loop:false,
-  //   navigation: {
-  //       nextEl: $(this).parent().find('.swiper-button-next'),
-  //       prevEl: $(this).parent().find('.swiper-button-prev'),
-  //   },
-    
-  //   breakpoints: {
-  //       640: {
-  //         slidesPerGroup: 2,
-  //         spaceBetween: 20,
-  //       },
-  //       900: {
-  //         slidesPerGroup: 3,
-  //         spaceBetween: 20,
-  //       },
-  //       1200: {
-  //         slidesPerGroup: 9,
-  //         spaceBetween: 20,
-  //         slidesPerView: 9,
-  //       },
-  //     } 
-  // });
-  // });
-
-
+  var top_show = 500; // В каком положении полосы прокрутки начинать показ кнопки "Наверх"
+  var delay = 1000; // Задержка прокрутки
+  $(document).ready(function() {
+    $(window).scroll(function () { // При прокрутке попадаем в эту функцию
+      /* В зависимости от положения полосы прокрукти и значения top_show, скрываем или открываем кнопку "Наверх" */
+      if ($(this).scrollTop() > top_show) $('.button-up').fadeIn("300");
+      else $('.button-up').fadeOut("300");
+    });
+    $('.button-up').click(function () { // При клике по кнопке "Наверх" попадаем в эту функцию
+      /* Плавная прокрутка наверх */
+      $('body, html').animate({
+        scrollTop: 0
+      }, delay);
+    });
+  });
 
 
   

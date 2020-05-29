@@ -172,6 +172,20 @@ header{
         
     }
 }
+.logo{
+    width: 213px;
+    height: 189px;
+    @include for-lit-md(){
+        height: 97px;
+    }
+    img{
+        display: block;
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+        object-position: left;
+    }
+}
 .menu{
     
     ul{
@@ -212,6 +226,22 @@ header{
     }
     &--white{
         color: $white;
+    }
+    &--big{
+        font-size: 56px;
+        line-height: 60px;
+        @include for-md(){
+            font-size: 40px;
+            line-height: 43px;
+        }
+        @include for-sm(){
+            font-size: 25px;
+            line-height: 28px;
+        }
+        @include for-tiny-tablet(){
+            font-size: 20px;
+            line-height: 23px;
+        }
     }
 }
 .call-block{
@@ -287,10 +317,12 @@ header{
         @include for-xl{
             display: block;
             max-width: 130px;
+            
             flex-shrink: 0;
         }
         @include for-lit-md{
             max-width: 155px;
+            height: 139px;
         }
         img{
             @include for-xl{
@@ -308,6 +340,7 @@ header{
     &__number{
         margin-left: 200px;
         font-size: 48px;
+        line-height: 51px;
         @include for-xl{
             margin-left: 0;
         }
@@ -315,9 +348,11 @@ header{
             margin-top: 75px;
             margin-left: 0;
             font-size: 40px;
+            line-height: 43px;
         }
         @include for-lit-mob{
             font-size: 37px;
+            line-height: 40px;
         }
     }
     &__button{
@@ -393,7 +428,7 @@ header{
         object-fit: cover;
     }
     &__text-container{
-        padding: 95px 0 176px 71px;
+        padding: 95px 100px 176px 71px;
         width: 50%;
         min-height: 481px;
         box-sizing: border-box;
@@ -440,6 +475,7 @@ header{
         }
         @include for-xl{
             font-size: 48px;
+            line-height: 53px;
         }
         @include for-md{
             width: 100%;
@@ -479,9 +515,9 @@ header{
             background-size: cover;
             background-repeat: no-repeat;
         }
-        @include for-xl{
-            top: 75%;
-        }
+        // @include for-xl{
+        //     top: 75%;
+        // }
         @include for-md{
             display: none;
         }
@@ -497,9 +533,9 @@ header{
             background-size: cover;
             background-repeat: no-repeat;
         }
-        @include for-xl{
-            top: 75%;
-        }
+        // @include for-xl{
+        //     top: 75%;
+        // }
         @include for-md{
             display: none;
         }
@@ -744,7 +780,7 @@ header{
             margin-right: -55px;
         }
         @include for-lit-mob{
-            margin-right: 0;
+            margin-right: -10px;
         }
     }
     
@@ -813,9 +849,11 @@ header{
     }
     &__name-big-font{
         font-size: 28px;
+        line-height: 31px;
         transition: .3s;
         @include for-tiny-tablet{
             font-size: 19px;
+            line-height: 21px;
         }
     }
     &__text{
@@ -950,6 +988,7 @@ header{
         display: block;
         font-weight: 500;
         font-size: 20px;
+        line-height: 23px;
         padding-right: 37px;
         margin-right: 26px;
         &::after{
@@ -977,6 +1016,7 @@ header{
             padding-right: 20px;
             margin-right: 10px;
             font-size: 13px;
+            line-height: 17px;
         }
     }
     &__item:last-child &__link{
@@ -1095,6 +1135,7 @@ header{
             margin-bottom: 10px;
             padding-bottom: 0;
             font-size: 25px;
+            line-height: 28px;
         }
     }
     &__img-container{
@@ -1109,6 +1150,7 @@ header{
         }
     }
     &__img{
+        max-width: 100%;
         @include for-xxl{
             display: block;
             width: 100%;
@@ -1129,7 +1171,137 @@ header{
         
         
     }
-    
+
+    &__bottom{
+        padding: 120px 0 200px;
+        @include for-md(){
+            padding: 50px 0 120px;
+        }
+    }
+    &__bottom-desc{
+        max-width: 1500px;
+        width: 100%;
+        margin: 0 auto 90px;
+        font-size: 32px;
+        line-height: 40px;
+        text-align: center;
+
+        @include for-md(){
+            font-size: 25px;
+            line-height: 28px;
+            margin-bottom: 45px;
+        }
+        @include for-sm(){
+            font-size: 20px;
+            line-height: 24px;
+        }
+        @include for-tiny-tablet(){
+            font-size: 16px;
+            line-height: 20px;
+            margin-bottom: 30px;
+        }
+    }
+    &__helpfull{
+        margin-bottom: 90px;
+        @include for-md(){
+            margin-bottom: 45px;
+        }
+    }
+}
+.helpfull{
+    text-align: center;
+    &__desc{
+        font-size: 40px;
+        line-height: 43px;
+        font-weight: 700;
+        color: $blue;
+        margin-bottom: 40px;
+
+        @include for-md(){
+            font-size: 30px;
+            line-height: 33px;
+            margin-bottom: 20px;
+        }
+        @include for-sm(){
+            font-size: 22px;
+            line-height: 25px;
+        }
+        @include for-tiny-tablet(){
+            font-size: 17px;
+            line-height: 20px;
+        }
+    }
+
+}
+.other-cateroires{
+    display: flex;
+    justify-content: center;
+    &__link{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 3px solid rgb(230, 230, 230);
+        border-radius: 30px;
+        max-width: 290px;
+        width: 100%;
+        margin: 0 32px;
+        box-sizing: border-box;
+        padding: 78px 20px 30px;
+        font-size: 24px;
+        line-height: 27px;
+        color: $light-blue;
+        font-weight: bold;
+        text-decoration: underline;
+        text-align: center;
+        transition: .3s;
+
+       
+
+        &:hover{
+            opacity: .7;
+            text-decoration: none;
+        }
+
+        @include for-md(){
+            margin: 0 5px;
+            padding: 20px 10px 20px;
+            max-width: calc(33.3% - 10px);
+        }
+
+        @include for-sm(){
+            font-size: 15px;
+            line-height: 18px;
+            padding: 20px 10px 10px;
+        }
+        @include for-tiny-mob(){
+            font-size: 11px;
+            line-height: 14px;
+        }
+        
+          
+    }
+    &__image-container{
+        height: 124px;
+        margin-bottom: 57px;
+        text-align: center;
+        @include for-md(){
+            margin-bottom: 20px;
+            height: auto;
+            height: 100px;
+        }
+        @include for-sm(){
+            height: 50px;
+            margin-bottom: 10px;
+        }
+    }
+    &__image{
+       display: block;
+       width: 100%;
+       height: 100%;
+       object-fit: contain;
+       object-position: center;
+        max-width: 100%;
+    }
 }
 .about-container{
         display: flex;
@@ -1341,6 +1513,7 @@ header{
     p{
         margin-top: 0;
         font-size: 24px;
+        
         max-width: 730px;
         @include for-xl{
             font-size: 18px;
@@ -1355,5 +1528,50 @@ header{
     margin-top: 78px;
     @include for-tiny-tablet{
         margin-top: 47px;
+    }
+}
+
+.button-up{
+    display: none;
+    position: fixed;
+    left: 53px;
+    bottom: 20px;
+    z-index: 9000;
+    cursor: pointer;
+    transition: .3s;
+    @include for-md(){
+        left: 10px;
+    }
+    &:hover{
+        opacity: .7;
+    }
+
+    &__container{
+        display: flex;
+        align-items: center;
+    }
+    &__icon{
+        height: 70px;
+        width: 70px;
+        border-radius: 50%;
+        flex-shrink: 0;
+        margin-right: 16px;
+        background: url(../images/upp-icon.png) center center no-repeat $light-blue;
+
+        @include for-md(){
+            height: 46px;
+            width: 46px;
+            background-size: 30%;
+        }
+    }
+    &__text{
+        font-size: 20px;
+        line-height: 25px;
+        color: $light-blue;
+        font-weight: bold;
+        @include for-md(){
+            font-size: 15px;
+            line-height: 18px;
+        }
     }
 }
