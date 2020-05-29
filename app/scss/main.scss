@@ -127,12 +127,15 @@ header{
         margin-left: 114px;
         @include for-xxl{
             margin-left: 30px;
+            width: 100%;
+            margin-right: 30px;
         }
         @include for-md{
             display: none;
             position: absolute;
             padding: 10px;
             margin-left: 0;
+            margin-right: 0;
             width: 100%;
             right: -10px;
             top: 105%;
@@ -147,6 +150,9 @@ header{
                     font-size: 14px;
                     line-height: 18px;
                 }
+            }
+            @include for-xxl{
+                justify-content: space-between;
             }
             @include for-md{
                 margin-bottom: 20px !important;
@@ -164,10 +170,19 @@ header{
     &__call-block{
         margin-left: auto;
         margin-top: -31px;
+        @include for-xxl{
+            max-width: 248px;
+            width: 100%;
+        }
+        @include for-xl{
+            max-width: 200px;
+        }
         @include for-md{
             display: flex;
             flex-direction: column;
             margin-top: 0;
+            max-width: 100%;
+            
         }
         
     }
