@@ -13,12 +13,10 @@ $(".nav-toggle").click(function() {
 
   $('.stock .swiper-container').each(function(){
     var events_slider = new Swiper(this, {
-      slidesPerView: 'auto',
     loopedSlides:40,
     slidesPerView: 1,
     spaceBetween: 10,
-    autoplay:true,
-    autoHeight:true,
+    autoplay:false,
     loop:true,
     navigation: {
         nextEl: $(this).parent().find('.swiper-button-next'),

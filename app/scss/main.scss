@@ -422,25 +422,29 @@ header{
     }
     &__item{
         display: flex;
-        align-items: center;
         @include for-md{
             flex-direction: column;
         }
     }
+    .swiper-slide{
+        display: flex;
+        height: auto;
+    }
     &__img-container{
         display: block;
         width: 50%;
-        height: 481px;
         @include for-md{
             width: 100%;
-            height: auto;
+            height: 300px;
         }
     }
     &__img{
         display: block;
         height: 100%;
         width: 100%;
-        object-fit: cover;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
     }
     &__text-container{
         padding: 95px 100px 70px 71px;
@@ -653,7 +657,7 @@ header{
 .services{
     padding: 0 100px 129px;
     @include for-md{
-        padding: 32px 15px 67px;
+        padding: 32px 0 67px;
     }
     &__title{
         text-align: center;
@@ -684,6 +688,7 @@ header{
             margin-right: 0 !important;
             margin-bottom: 26px;
             box-sizing: border-box;
+            padding-right: 20px;
         }
     }
     .swiper-button-next{
