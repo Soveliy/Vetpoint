@@ -3,6 +3,11 @@ $white: #ffffff;
 $blue: #0063a1;
 $light-blue: #01abde;
 $red: red;
+$resolution: 1920;
+
+@function vw($px) {
+  @return (($px/$resolution) * 100)+vw;
+}
 
 @mixin for-xxl {
   @media (max-width: 1805px) { @content; }
