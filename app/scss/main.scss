@@ -443,7 +443,7 @@ header{
         object-fit: cover;
     }
     &__text-container{
-        padding: 95px 100px 176px 71px;
+        padding: 95px 100px 70px 71px;
         width: 50%;
         min-height: 481px;
         box-sizing: border-box;
@@ -750,7 +750,7 @@ header{
     }
     &__img{
         @include for-md{
-            height: 70%;
+            height: 60%;
         }
     }
     &__text{
@@ -815,6 +815,13 @@ header{
         @include for-lit-mob{
             padding-right: 10px;
         }
+    }
+    &__invited{
+        display: block;
+        font-size: 13px;
+        line-height: 17px;
+        text-align: center;
+        color: $red;
     }
     
 }
@@ -1042,7 +1049,7 @@ header{
         }
     }
 }
-.contacs{
+.contacts{
     padding-top: 48px;
     @include for-tiny-tablet{
         padding-top: 34px;
@@ -1062,6 +1069,7 @@ header{
         font-size: 36px;
         line-height: 40px;
         font-weight: 500;
+        text-align: center;
         &--last{
             margin-top: 140px;
             font-weight: 700;
@@ -1081,6 +1089,7 @@ header{
         font-weight: 500;
         font-size: 28px;
         line-height: 32px;
+        text-align: center;
         &--blue{
             color: $blue;
         }
@@ -1148,7 +1157,7 @@ header{
         }
         @include for-tiny-tablet{
             margin-bottom: 10px;
-            padding-bottom: 0;
+            padding-bottom: 5px;
             font-size: 25px;
             line-height: 28px;
         }

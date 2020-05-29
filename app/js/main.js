@@ -18,6 +18,7 @@ $(".nav-toggle").click(function() {
     slidesPerView: 1,
     spaceBetween: 10,
     autoplay:true,
+    autoHeight:true,
     loop:true,
     navigation: {
         nextEl: $(this).parent().find('.swiper-button-next'),
