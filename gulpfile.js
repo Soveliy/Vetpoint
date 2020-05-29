@@ -50,6 +50,8 @@ gulp.task('js', function(){
   return gulp.src([
     'node_modules/swiper/js/swiper.min.js',
     'assest/js/jquery.fancybox.js',
+    'assest/js/mask.js',
+    'assest/js/jquery.arcticmodal.js',
   ])
     .pipe(concat('libs.min.js'))
     .pipe(uglify())

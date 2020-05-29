@@ -92,4 +92,11 @@ $(".nav-toggle").click(function() {
 
   
 
+  
+$('.call-block__button,.footer__button').click(function(){
+  $("#call-modal").arcticmodal()
+   });
+
+   $(".numbox").mask("+7 (999) 999 99 99");
+
 
