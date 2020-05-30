@@ -97,6 +97,7 @@ header{
     display: flex;
     flex-direction: column;
     height: 100%;
+    overflow-x: hidden;
     
 }
 .container{
@@ -166,12 +167,7 @@ header{
             z-index: 2;
         }
         ul{
-            a{
-                // @include for-xl{
-                //     font-size: vw(14);
-                //     line-height: vw(18);
-                // }
-            }
+            
             @include for-xxl{
                 justify-content: space-between;
             }
@@ -307,13 +303,7 @@ header{
         //     margin-bottom: 10px;
         // }
     }
-    &__button{
-        @include for-md{
-            margin: 15px auto;
-            padding: 10px !important;
-            font-size: 16px !important;
-        }
-    }
+    
     &--adaptive{
         display: none;
         @include for-md{
@@ -339,9 +329,10 @@ header{
     transition: .3s;
 
     @include for-md(){
+        margin-left: 0;
+        padding: 19px;
         font-size: 20px;
         line-height: 22px;
-        padding: 19px;
         border-radius: 10px;
     }
     &--blue{
@@ -1743,12 +1734,323 @@ header{
     }
 }
 
+.page-title{
+    font-weight: 700;
+    font-size: vw(48);
+    line-height: vw(52);
+    &--blue{
+        color: $blue;
+    }
+    @include for-md{
+        font-size: 38px;
+        line-height: 42px;
+    }
+    @include for-lit-md{
+        font-size: 28px;
+        line-height: 32px;
+    }
+}
+.stocks-page{
+    margin-top: vw(94);
+    margin-bottom: vw(196);
+    padding-left: vw(170);
+    &__title{
+        margin-bottom: vw(105);
+    }
+    &__row{
+        padding-bottom: vw(226);
+    }
+    @include for-lit-md{
+        padding-left: 0;
+    }
+}
+.stocks-item{
+    display: flex;
+    align-items: flex-start;
+    @include for-lit-md{
+        flex-direction: column;
+    }
+    &__text-container{
+        width: 64%;
+        @include for-lit-md{
+           width: 100%;
+        }
+    }
+    &__img-container{
+        margin-right: vw(77);
+        width: 36%;
+        height: vw(427);
+        @include for-md{
+            height: 300px;
+            margin-right: 40px;
+        }
+        @include for-lit-md{
+            height: 320px;
+            width: 100%;
+            margin-right: 0;
+            margin-bottom: 20px;
+        }
+        @include for-lit-mob{
+            height: 200px;
+        }
+    }
+    &__img{
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    &__title{
+        padding-bottom: vw(43);
+        font-weight: 700;
+        font-size: vw(40);
+        line-height: vw(44);
+        @include for-md{
+            padding-bottom: 20px;
+            font-size: 28px;
+            line-height: 32px;
+        }
+        @include for-tiny-mob{
+            padding-bottom: 10px;
+            font-size: 22px;
+            line-height: 26px;
+        }
+        @include for-lit-mob{
+            font-size: 18px;
+            line-height: 22px;
+        }
+    }
+    &__text{
+        font-size: vw(20);
+        line-height: vw(28);
+        @include for-md{
+            font-size: 16px;
+            line-height: 22px;
+        }
+        @include for-tiny-mob{
+            font-size: 14px;
+            line-height: 18px;
+        }
+        @include for-lit-mob{
+            font-size: 12px;
+            line-height: 16px;
+        }
+    }
+    &__mark{
+        padding-top: vw(20);
+        font-size: vw(16);
+        line-height: vw(28);
+        @include for-md{
+            font-size: 14px;
+            line-height: 18px;
+        }
+        @include for-tiny-mob{
+            font-size: 12px;
+            line-height: 16px;
+        }
+        @include for-lit-mob{
+            font-size: 10px;
+            line-height: 14px;
+        }
+    }
+}
+.stocks-item + .stocks-item{
+    margin-top: vw(128);
+}
+.vacancies{
+    margin-top: vw(84);
+    margin-bottom: vw(186);
+    padding-left: vw(169);
+    @include for-md{
+        margin-top: 60px;
+        margin-bottom: 120px;
+        padding-left: 100px;
+    }
+    @include for-lit-md{
+        margin-top: 20px;
+        margin-bottom: 70px;
+        padding: 0 15px;
+    }
+    @include for-tiny-mob{
+        margin-bottom: 40px;
+    }
+    &__row{
+        margin-top: vw(100);
+        margin-bottom: vw(50);
+        @include for-md{
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+        @include for-lit-md{
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+    }
+}
+.vacancies-item{
+    &__title{
+        margin-bottom: vw(33);
+        font-weight: 700;
+        font-size: vw(40);
+        line-height: vw(40);
+        color: $blue;
+        @include for-md{
+            margin-bottom: 20px;
+            font-size: 28px;
+            line-height: 32px;
+        }
+        @include for-lit-md{
+            margin-bottom: 10px;
+            font-size: 24px;
+            line-height: 28px;
+        }
+        @include for-tiny-mob{
+            font-size: 18px;
+            line-height: 22px;
+        }
+    }
+    &__row{
+        display: flex;
+        flex-wrap: wrap;
+        // margin-right: vw(-20);
+    }
+    &__container{
+        width: 50%;
+        // padding-right: vw(30);
+        box-sizing: border-box;
+        margin-bottom: vw(48);
+        @include for-md{
+            width: 100%;
+            margin-bottom: 30px;
+        }
+        @include for-lit-md{
+            margin-bottom: 20px;
+        }
+    }
+    &__item-title{
+        margin-bottom: vw(30);
+        font-size: vw(28);
+        line-height: vw(28);
+        font-weight: 700;
+        @include for-md{
+            font-size: 18px;
+            line-height: 22px;
+        }
+        @include for-lit-md{
+            font-size: 14px;
+            line-height: 18px;
+        }
+        @include for-tiny-mob{
+            font-size: 12px;
+            line-height: 16px;
+        }
+    }
+    &__list-item{
+        font-size: vw(20);
+        line-height: vw(28);
+        @include for-md{
+            font-size: 12px;
+            line-height: 16px;
+        }
+        @include for-tiny-mob{
+            font-size: 10px;
+            line-height: 14px;
+        }
+        
+    }
+}
+.vacancies-item + .vacancies-item{
+    margin-top: vw(90);
+    @include for-lit-md{
+        margin-top: 20px;
+    }
+    @include for-tiny-mob{
+        margin-top: 5px;
+    }
+}
+.vacancies-appointment{
+    margin-bottom: vw(120);
+    text-align: center;
+    @include for-md{
+        margin-bottom: 60px;
+    }
+    @include for-tiny-mob{
+        margin-bottom: 30px;
+    }
+    &__title{
+        margin-bottom: vw(65);
+        font-weight: 700;
+        font-size: vw(44);
+        line-height: vw(48);
+        @include for-md{
+            margin-bottom: 20px;
+            font-size: 28px;
+            line-height: 32px;
+        }
+        @include for-lit-md{
+            font-size: 24px;
+            line-height: 28px;
+        }
+        @include for-tiny-mob{
+            margin-bottom: 10px;
+            font-size: 18px;
+            line-height: 22px;
+        }
+    }
+    &__item + &__item{
+        margin-top: vw(85);
+        @include for-md{
+            margin-top: 20px;
+        }
+        @include for-tiny-mob{
+            margin-top: 10px;
+        }
+    }
+    &__number{
+        font-weight: 700;
+        font-size: vw(54);
+        line-height: vw(58);
+        color: $light-blue;
+        @include for-md{
+            font-size: 28px;
+            line-height: 32px;
+        }
+        @include for-lit-md{
+            font-size: 24px;
+            line-height: 28px;
+        }
+        @include for-tiny-mob{
+            font-size: 18px;
+            line-height: 22px;
+        }
+    }
+    &__text{
+        margin-top: vw(10);
+        font-weight: 700;
+        font-size: vw(26);
+        line-height: vw(30);
+        @include for-md{
+            font-size: 16px;
+            line-height: 20px;
+        }
+        @include for-lit-md{
+            font-size: 14px;
+            line-height: 18px;
+        }
+        @include for-tiny-mob{
+            font-size: 12px;
+            line-height: 16px;
+        }
+    }
+}
+
+
 .modal-content{
     background-color: $white;
     padding: 30px 20px;
     box-sizing: border-box;
     border-radius: 10px;
-
     h2{
         font-size: 30px;
         line-height: 33px;
@@ -1815,7 +2117,3 @@ header{
     }
 }
 
-.logo{
- padding-left: vw(36);
- height: vw(330)
-}
