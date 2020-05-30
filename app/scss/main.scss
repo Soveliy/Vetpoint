@@ -288,17 +288,7 @@ header{
         //     margin-bottom: 10px;
         // }
     }
-<<<<<<< HEAD
     
-=======
-    &__button{
-        @include for-md{
-            margin: 15px auto;
-            padding: 10px !important;
-            font-size: 16px !important;
-        }
-    }
->>>>>>> d463716ada2297fce7a4c39f8fc1aa297be4d3a5
     &--adaptive{
         display: none;
         @include for-md{
@@ -1721,7 +1711,7 @@ header{
         }
     }
 }
-<<<<<<< HEAD
+
 .page-title{
     font-weight: 700;
     font-size: vw(48);
@@ -1744,11 +1734,16 @@ header{
 .stocks-item{
     display: flex;
     align-items: flex-start;
+    @include for-lit-md{
+        flex-direction: column;
+    }
     &__img-container{
         margin-right: vw(77);
-        max-width: vw(643);
-        width: 100%;
+        width: 40%;
         height: vw(427);
+        @include for-md{
+            margin-right: 40px;
+        }
     }
     &__img{
         display: block;
@@ -1760,12 +1755,21 @@ header{
     &__title{
         padding-bottom: vw(43);
         font-weight: 700;
-        font-size: 40px;
-        line-height: 44px;
+        font-size: vw(40);
+        line-height: vw(44);
+        @include for-md{
+            padding-bottom: 20px;
+            font-size: 32px;
+            line-height: 36px;
+        }
     }
     &__text{
         font-size: vw(20);
         line-height: vw(28);
+        @include for-md{
+            font-size: 16px;
+            line-height: 22px;
+        }
     }
     &__mark{
         padding-top: vw(20);
@@ -1775,14 +1779,13 @@ header{
 }
 .stocks-item + .stocks-item{
     margin-top: vw(128);
-=======
+
 
 .modal-content{
     background-color: $white;
     padding: 30px 20px;
     box-sizing: border-box;
     border-radius: 10px;
-
     h2{
         font-size: 30px;
         line-height: 33px;
@@ -1839,5 +1842,6 @@ header{
             opacity: .7;
         }
     }
->>>>>>> d463716ada2297fce7a4c39f8fc1aa297be4d3a5
+
+}
 }
