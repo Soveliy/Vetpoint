@@ -1423,6 +1423,18 @@ header{
        object-position: center;
         max-width: 100%;
     }
+    &--pb{
+        padding-bottom: vw(186);
+        @include for-md{
+            padding-bottom: 120px;
+        }
+        @include for-lit-md{
+            padding-bottom: 70px;
+        }
+        @include for-tiny-mob{
+            padding-bottom: 40px;
+        }
+    }
 }
 .about-container{
         display: flex;
@@ -1840,21 +1852,18 @@ header{
 }
 .vacancies{
     margin-top: vw(84);
-    margin-bottom: vw(186);
     padding-left: vw(169);
     @include for-md{
         margin-top: 60px;
-        margin-bottom: 120px;
+        
         padding-left: 100px;
     }
     @include for-lit-md{
         margin-top: 20px;
-        margin-bottom: 70px;
+        
         padding: 0 15px;
     }
-    @include for-tiny-mob{
-        margin-bottom: 40px;
-    }
+    
     &__row{
         margin-top: vw(100);
         margin-bottom: vw(50);
