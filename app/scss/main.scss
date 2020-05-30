@@ -42,6 +42,10 @@ header{
  .main{
     /* 1 flex-grow, 0 flex-shrink, auto flex-basis */
     flex: 1 0 auto;
+    @include for-md(){
+        position: relative;
+        overflow: hidden;
+    }
  }
  footer{
     /* 0 flex-grow, 0 flex-shrink, auto flex-basis */
@@ -167,11 +171,11 @@ header{
             @include for-xxl{
                 justify-content: space-between;
             }
-            @include for-md{
-                margin-bottom: 20px !important;
-                flex-direction: column !important;
-                align-items: center !important;
-            }
+            // @include for-md{
+            //     margin-bottom: 20px !important;
+            //     flex-direction: column !important;
+            //     align-items: center !important;
+            // }
         }
         li + li{
             @include for-md{
@@ -183,13 +187,13 @@ header{
     &__call-block{
         margin-left: auto;
         margin-top: vw(-31);
-        @include for-xxl{
-            max-width: 248px;
-            width: 100%;
-        }
-        @include for-xl{
-            max-width: 200px;
-        }
+        // @include for-xxl{
+        //     max-width: 248px;
+        //     width: 100%;
+        // }
+        // @include for-xl{
+        //     max-width: 200px;
+        // }
         @include for-md{
             display: flex;
             flex-direction: column;
@@ -221,6 +225,11 @@ header{
     ul{
         display: flex;
         align-items: center;
+
+        @include for-md(){
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
         
     }
     li + li{
@@ -231,6 +240,11 @@ header{
         // @include for-xl{
         //     margin-left: 12px;
         // }
+
+        @include for-md(){
+            margin-left: 0;
+            margin-top: 10px;
+        }
         
     }
     a{
@@ -352,13 +366,13 @@ header{
         }
     }
     &__logo{
-        @include for-xl{
-            display: block;
-            max-width: 130px;
+        // @include for-xl{
+        //     display: block;
+        //     max-width: 130px;
             
-            flex-shrink: 0;
-        }
-        @include for-lit-md{
+        //     flex-shrink: 0;
+        // }
+        @include for-md{
             max-width: 155px;
             height: 139px;
         }
@@ -633,12 +647,12 @@ header{
         width: 100%;
         margin-bottom: vw(21);
         @include for-md{
-            height: 80px;
+            height: 50px;
             margin-bottom: 15px;
         }
         @include for-tiny-tablet{
             margin-bottom: 17px;
-            height: 70px;
+            height: 40px;
         }
     }
     &__img{
@@ -790,8 +804,8 @@ header{
             border-color: $blue;
         }
         @include for-md{
-            width: 120px;
-            height: 120px;
+            width: 90px;
+            height: 90px;
         }
         @include for-tiny-tablet{
             width: 65px;
@@ -860,9 +874,9 @@ header{
         box-sizing: border-box;
         padding-right: vw(70);
         margin-bottom: vw(20);
-        @include for-xl{
-            width: 33.33333333%;
-        }
+        // @include for-xl{
+        //     width: 33.33333333%;
+        // }
         @include for-md{
             width: 50%;
             padding-right: 55px;
@@ -1210,6 +1224,11 @@ header{
 }
 .map{
     margin-top: vw(105);
+    height: vw(790);
+
+    > ymaps{
+        height: 100% !important;
+    }
     @include for-md{
         display: none;
     }
@@ -1518,11 +1537,11 @@ header{
     text-align: center;
     background-color: $blue;
     color: $white;
-    @include for-xl{
-        br{
-            display: none;  
-        }
-    }
+    // @include for-xl{
+    //     br{
+    //         display: none;  
+    //     }
+    // }
     @include for-tiny-tablet{
         padding: 40px 0 30px;
         font-size: 22px;
@@ -1664,13 +1683,14 @@ header{
     p{
         margin-top: 0;
         font-size: vw(24);
-        max-width: 730px;
+        max-width: vw(730);
         // @include for-xl{
         //     font-size: 18px;
         // }
         @include for-tiny-tablet{
             font-size: 16px;
             line-height: 27px;
+            max-width: 100%;
         }
     }
 }
@@ -2066,6 +2086,7 @@ header{
         border-radius: 10px;
         border: 1px solid rgba($black,.5);
         transition: .3s;
+        font-size: 20px;
         &::placeholder{
             transition: .3s;
         }
@@ -2090,11 +2111,18 @@ header{
         height: 61px;
         width: 61px;
         background: url(../images/close.png) center center no-repeat;
+        background-size: contain;
         cursor: pointer;
         transition: .3s;
+        @include for-sm(){
+            width: 45px;
+            height: 45px;
+            top: -50px;
+            right: 0;
+        }
         &:hover{
             opacity: .7;
         }
     }
-
 }
+
