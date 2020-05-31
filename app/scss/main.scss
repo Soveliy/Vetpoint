@@ -959,6 +959,9 @@ header{
             line-height: 21px;
         }
     }
+    &__text-container{
+
+    }
     &__text{
         margin-top: vw(14);
         font-size: vw(16);
@@ -2205,6 +2208,9 @@ header{
     @include for-lit-md{
         padding: 70px 30px 0;
     }
+    @include for-tiny-mob{
+        padding: 55px 9px 0;
+    }
     &__title{
         margin-bottom: vw(88);
         font-weight: 700;
@@ -2213,6 +2219,11 @@ header{
         @include for-md{
             font-size: 42px;
             line-height: 46px;
+        }
+        @include for-tiny-mob{
+            margin-bottom: 34px;
+            font-size: 24px;
+            line-height: 28px;
         }
         
     }
@@ -2228,21 +2239,37 @@ header{
             width: 50%;
         }
         @include for-tiny-mob{
+            margin-bottom: 40px;
             width: 100%;
         }
     }
     &__item{
         @include for-tiny-mob{
-            
+            display: flex;
+            align-items: center;
             width: auto;
             margin: 0 auto;
         }
     }
     &__img-container{
         margin: 0;
+        @include for-tiny-mob{
+            margin-right: 17px;
+            height: 208px;
+            width: 139px;
+        }
+    }
+    &__text-container{
+        @include for-tiny-mob{
+            width: 55%;
+        }
     }
     &__text{
         text-align: left;
+        @include for-tiny-mob{
+            font-size: 13px;
+            line-height: 17px;
+        }
     }
     &__name{
         text-align: left;
@@ -2255,9 +2282,11 @@ header{
         color: $blue;
         text-decoration: underline;
         @include for-md{
-            font-size: 14px;
-            line-height: 18px;
+            margin-top: 22px;
+            font-size: 17px;
+            line-height: 21px;
         }
+        
     }
     &__invited{
         margin-top: vw(12);
@@ -2275,6 +2304,15 @@ header{
         font-weight: 700;
         font-size: vw(48);
         line-height: vw(52);
+        @include for-md{
+            margin-top: 20px;
+            margin-bottom: 40px;
+            font-size: 34px;
+            line-height: 38px;
+        }
+        @include for-tiny-mob{
+            display: none;
+        }
     }
     &__img-bottom-container{
         display: inline-block;
@@ -2285,7 +2323,78 @@ header{
         max-width: 100%;
     }
 }
-
+.documents{
+    padding-top: vw(88);
+    padding-left: vw(169);
+    padding-right: vw(118);
+    @include for-md{
+        padding-top: 60px;
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+    @include for-lit-md {
+        padding-top: 30px;
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+    @include for-tiny-mob{
+        padding: 52px 15px 30px;
+    }
+    &__row{
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: vw(100);
+        margin-right: vw(-55);
+        margin-bottom: vw(45);
+        @include for-md{
+            margin-top: 40px;
+            margin-right: -55px;
+            margin-bottom: 30px;
+        }
+        @include for-tiny-mob{
+            margin-top: 35px;
+            margin-right: -25px;
+        }
+        @include for-lit-mob{
+            margin-right: -15px;
+        }
+    }
+    &__container{
+        width: 20%;
+        box-sizing: border-box;
+        padding-right: vw(55);
+        margin-bottom: vw(71);
+        @include for-md{
+            width: 25%;
+            padding-right: 55px;
+            margin-bottom: 30px;
+        }
+        @include for-lit-md {
+            width: 33.333333333333%;
+            padding-right: 30px;
+        }
+        @include for-tiny-mob{
+            padding-right: 25px;
+            margin-bottom: 17px;
+        }
+        @include for-lit-mob{
+            padding-right: 15px;
+        }
+    }
+    &__item{
+        display: block;
+        height: vw(370);
+        max-width: vw(282);
+        background-color: #c1e3ed;
+        @include for-md{
+            height: 200px;
+            max-width: 100%;
+        }
+        @include for-tiny-mob{
+            height: 155px;
+        }
+    }
+}
 .modal-content{
     background-color: $white;
     padding: 30px 20px;
