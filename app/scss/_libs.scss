@@ -378,7 +378,7 @@ body.compensate-for-scrollbar {
 }
 
 .fancybox-container {
-
+    -webkit-backface-visibility: hidden;
     height: 100%;
     left: 0;
     outline: none;
@@ -482,6 +482,7 @@ body.compensate-for-scrollbar {
 }
 
 .fancybox-slide {
+    -webkit-backface-visibility: hidden;
     /* Using without prefix would break IE11 */
     display: none;
     height: 100%;
@@ -543,6 +544,7 @@ body.compensate-for-scrollbar {
 
 .fancybox-slide--image .fancybox-content {
     animation-timing-function: cubic-bezier(.5, 0, .14, 1);
+    -webkit-backface-visibility: hidden;
     background: transparent;
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -1025,13 +1027,13 @@ body.compensate-for-scrollbar {
         padding-left: 12px;
         padding-right: 12px;
     }
-/* 
+
     @supports (padding: max(0px)) {
         .fancybox-caption {
           
           
         }
-    } */
+    }
 }
 /* Share */
 

@@ -82,7 +82,7 @@ $(".nav-toggle").click(function() {
   
 
   
-$('.call-block__button,.footer__button').click(function(){
+$('.call-block__button,.footer__button,.services-template__button').click(function(){
   $("#call-modal").arcticmodal()
    });
 
@@ -91,4 +91,11 @@ $('.call-block__button,.footer__button').click(function(){
    $(".price-page__open").click(function() {
     $(this).toggleClass("opened"); 
     $(this).next().slideToggle();
+  });
+
+  $('.photos__gallery').masonry({
+    // options
+    itemSelector: '.photos__gallery-item',
+    columnWidth: '.photos__gallery-item-size',
+    percentPosition: true,
   });
