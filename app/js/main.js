@@ -88,4 +88,7 @@ $('.call-block__button,.footer__button').click(function(){
 
    $(".numbox").mask("+7 (999) 999 99 99");
 
-
+   $(".price-page__open").click(function() {
+    $(this).toggleClass("opened"); 
+    $(this).next().slideToggle();
+  });

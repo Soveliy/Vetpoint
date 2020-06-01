@@ -35,6 +35,12 @@ button{
     cursor: pointer;
     background-color: transparent;
 }
+input{
+    border: none;
+}
+textarea{
+    resize: none;
+}
 header{
     /* 0 flex-grow, 0 flex-shrink, auto flex-basis */
     flex: 0 0 auto;
@@ -1131,6 +1137,10 @@ header{
         }
         &--last{
             color: $light-blue;
+        }
+        @include for-md{
+            font-size: 20px;
+            line-height: 24px;
         }
         @include for-tiny-tablet{
             padding-right: 20px;
@@ -2406,7 +2416,7 @@ header{
         padding: 40px 30px 40px;
     }
     @include for-tiny-mob{
-        padding: 20px 10px;
+        padding: 20px 10px 40px;
     }
     &__item{
         display: flex;
@@ -2511,6 +2521,569 @@ header{
         @include for-sm{
             margin-top: 35px;
         }
+    }
+}
+.news{
+    padding: vw(84) vw(50) vw(126) vw(167);
+    @include for-md{
+        padding: 60px 30px 100px 60px;
+    }
+    @include for-tiny-tablet{
+        padding: 40px 20px 60px;
+    }
+    &__row{
+        margin-top: vw(111);
+    }
+    &__item{
+        display: flex;
+        @include for-sm{
+            flex-direction: column;
+        }
+    }
+    &__item + &__item{
+        margin-top: vw(128);
+        @include for-md{
+           margin-top: 60px;
+        }
+        @include for-sm{
+            margin-top: 40px;
+        }
+    }
+    &__item-img-container{
+        display: block;
+        margin-right: vw(77);
+        width: vw(643);
+        @include for-sm{
+            margin-right: 0;
+            margin-bottom: 20px;
+        }
+        @include for-tiny-tablet{
+            max-width: 343px;
+            width: auto;
+        }
+
+    }
+    &__item-img{
+        width: 100%;
+        
+    }
+    &__text-container{
+        width: 58%;
+        @include for-sm{
+            width: 100%;
+        }
+    }
+    &__item-title{
+        margin-bottom: vw(33);
+        font-weight: 700;
+        font-size: vw(40);
+        line-height: vw(44);
+        @include for-md{
+            margin-bottom: 15px;
+            font-size: 26px;
+            line-height: 30px;
+        }
+        @include for-tiny-tablet{
+            font-size: 24px;
+            line-height: 28px;
+        }
+        
+    }
+    p{
+        font-size: vw(20);
+        line-height: vw(28);
+        @include for-md{
+            font-size: 14px;
+            line-height: 18px;
+        }
+        
+        
+    }
+}
+
+.equipment{
+    padding: vw(84) vw(50) vw(126) vw(167);
+    @include for-md{
+        padding: 60px 30px 100px 60px;
+    }
+    @include for-tiny-tablet{
+        padding: 40px 20px 60px;
+    }
+    &__row{
+        margin-top: vw(111);
+    }
+    &__item{
+        display: flex;
+        @include for-sm{
+            flex-direction: column;
+        }
+    }
+    &__item + &__item{
+        margin-top: vw(128);
+        @include for-md{
+           margin-top: 60px;
+        }
+        @include for-sm{
+            margin-top: 40px;
+        }
+    }
+    &__item-img-container{
+        display: block;
+        margin-right: vw(77);
+        width: vw(643);
+        @include for-sm{
+            margin-right: 0;
+            margin-bottom: 20px;
+        }
+        @include for-tiny-tablet{
+            max-width: 343px;
+            width: auto;
+        }
+
+    }
+    &__item-img{
+        width: 100%;
+        
+    }
+    &__text-container{
+        width: 58%;
+        @include for-sm{
+            width: 100%;
+        }
+    }
+    &__item-title{
+        margin-bottom: vw(33);
+        font-weight: 700;
+        font-size: vw(40);
+        line-height: vw(44);
+        @include for-md{
+            margin-bottom: 15px;
+            font-size: 26px;
+            line-height: 30px;
+        }
+        @include for-tiny-tablet{
+            font-size: 24px;
+            line-height: 28px;
+        }
+        
+    }
+    p{
+        font-size: vw(20);
+        line-height: vw(28);
+        @include for-md{
+            font-size: 14px;
+            line-height: 18px;
+        }
+        
+        
+    }
+}
+.reviews-page{
+    padding-top: vw(84);
+    padding-bottom: vw(196);
+    @include for-md{
+        padding-top: 30px;
+        padding-bottom: 120px;
+    }
+    @include for-sm{
+        padding: 30px 0 60px;
+    }
+    &__page-title{
+        padding-left: vw(169);
+        @include for-sm{
+            padding-left: 15px;
+            margin-bottom: 20px;
+        }
+    }
+    &__form-block{
+        display: flex;
+        padding: vw(42) 0 vw(61);
+        margin-top: vw(32);
+        align-items: center;
+        justify-content: center;
+        background-image: url(../images/bg/reviews.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        @include for-md{
+            padding: 20px 0 30px;
+        }
+        @include for-sm{
+            padding: 20px 15px 30px;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+    &__form-title{
+        font-weight: 900;
+        font-size: vw(48);
+        line-height: vw(52);
+        color: $white;
+        @include for-md{
+            margin-bottom: 20px;
+            font-size: 28px;
+            line-height: 32px;
+        }
+        @include for-sm{
+            font-size: 24px;
+            line-height: 28px;
+            br{
+                display: none;
+            }
+        }
+    }
+    &__form{
+        display: block;
+        padding-left: vw(162);
+        width: 20%;
+        @include for-md{
+            padding-left: 80px;
+        }
+        @include for-sm{
+            padding-left: 0;
+            width: 100%;
+        }
+    }
+    &__label{
+        display: block;
+        margin-bottom: vw(17);
+        color: $white;
+        @include for-md{
+            margin-bottom: 10px;
+            font-size: 16px;
+            line-height: 22px;
+        }
+    }
+    &__input{
+        display: block;
+        padding: 0 vw(15);
+        margin-bottom: vw(25);
+        height: vw(54);
+        border-radius: 10px;
+        border: 3px solid #e6e6e6;
+        box-sizing: border-box;
+        width: vw(510);
+        @include for-md{
+            font-size: 22px;
+            line-height: 26px;
+            width: 300px;
+            height: 34px;
+            // width: 100%;
+        }
+        @include for-sm{
+            width: 100%;
+        }
+        
+    }
+    &__textarea{
+        padding: vw(15);
+        border-radius: 10px;
+        border: 3px solid #e6e6e6;
+        width: vw(510);
+        box-sizing: border-box;
+        max-height: vw(214);
+        @include for-md{
+            font-size: 22px;
+            line-height: 26px;
+            width: 300px;
+            max-height: 214px;
+        }
+        @include for-sm{
+            width: 100%;
+        }
+    }
+    &__form-button{
+        margin-top: vw(58);
+        padding: vw(19) 0 ;
+        border-radius: 10px;
+        max-width: 268px;
+        width: 100%;
+        background-color: $white;
+        color: $blue;
+        font-weight: 700;
+        font-size: vw(28);
+        line-height: vw(32);
+        box-sizing: border-box;
+        @include for-md{
+            padding: 19px  0;
+            margin-top: 25px;
+            font-size: 16px;
+            line-height: 20px;
+        }
+        @include for-sm{
+            display: block;
+            padding: 15px 0;
+            max-width: 100%;
+            width: 100%;
+        }
+    }
+    &__main-container{
+        display: flex;
+        margin-top: vw(116);
+        padding-left: vw(169);
+        @include for-md{
+            margin-top: 50px;
+            padding-left: 40px;
+        }
+        @include for-sm{
+            flex-direction: column;
+            padding: 0 15px;
+        }
+    }
+    &__container{
+        width: 41%;
+        @include for-sm{
+            width: 100%;
+        }
+    }
+    &__container + &__container{
+        margin-left: vw(144);
+        @include for-md{
+           margin-left: 80px;
+        }
+        @include for-sm{
+            margin-left: 0;
+            margin-top: 20px;
+        }
+    }
+    &__item{
+        padding: vw(39) vw(41);
+        border-radius: 50px;
+        border: 3px solid $grey;
+        box-sizing: border-box;
+        font-size: vw(20);
+        line-height: vw(28);
+        @include for-md{
+            border-radius: 30px;
+            padding: 15px 20px;
+            font-size: 14px;
+            line-height: 18px;
+        }
+        @include for-tiny-tablet{
+            
+        }
+    }
+    &__item +  &__item{
+        margin-top: vw(34);
+        @include for-md{
+           margin-top: 20px;
+        }
+    }
+    &__item-name{
+        margin-top: vw(20);
+        font-weight: 700;
+        @include for-md{
+            margin-top: 10px;
+        }
+        
+    }
+    &__other-cateroires{
+        margin-top: vw(119);
+        @include for-sm{
+            margin-top: 40px;
+            padding: 0 15px;
+        }
+    }
+}
+.price-page{
+    padding-top: vw(54);
+    padding-left: vw(169);
+    padding-bottom: vw(285);
+    @include for-lit-md{
+        padding: 30px 20px 100px;
+    }
+    @include for-tiny-mob{
+        padding: 30px 8px 70px;
+    }
+    &__nav{
+        
+    }
+    &__nav-list{
+        margin-top: vw(58);
+        columns: 3;
+        @include for-md{
+            margin-top: 30px;
+        }
+        @include for-lit-md{
+            columns: 2;
+        }
+        @include for-tiny-mob{
+            margin-top: 45px;
+            columns: 1;
+        }
+    }
+    &__nav-link{
+        font-weight: 700;
+        font-size: vw(24);
+        line-height: vw(48);
+        color: $blue;
+        text-decoration: underline;
+        @include for-md{
+            font-size: 16px;
+            line-height: 30px;
+        }
+    }
+    &__row{
+        display: flex;
+        margin-top: vw(92);
+        @include for-lit-md{
+            flex-direction: column;
+        }
+        @include for-tiny-mob{
+            margin-top: 35px;
+        }
+    }
+    &__container{
+        width: 42%;
+        @include for-lit-md{
+            width: 100%;
+        }
+    }
+    &__container + &__container{
+        margin-left: vw(90);
+        @include for-md{
+            margin-left: 60px;
+        }
+        @include for-lit-md{
+            margin-left: 0;
+            margin-top: 30px;
+        }
+    }
+    &__row-item + &__row-item{
+        margin-top: vw(65);
+        @include for-md{
+            margin-top: 30px;
+        }
+    }
+    &__list{
+        display: none;
+        margin-top: vw(10);
+        padding-left: vw(25);
+        &--db{
+            display: block;
+        }
+        @include for-md{
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+        @include for-tiny-mob{
+            padding-left: 0;
+        }
+    }
+    &__open{
+        display: flex;
+        align-items: center;
+        font-weight: 700;
+        font-size: vw(33);
+        line-height: vw(37);
+        color: $blue;
+        @include for-md{
+            font-size: 16px;
+            line-height: 20px;
+        }
+        @include for-tiny-mob{
+            width: 100%;
+            font-size: 14px;
+        }
+    }
+    &__open.opened{
+        .price-page__icon{
+            &::after{
+                transform: translateX(-50%) rotate(-45deg);
+            }
+            &:before{
+                transform: translate(-50%, -50%) rotate(-45deg);
+            }
+        }
+    }
+    &__open-img-container{
+        display: flex;
+        margin-right: vw(35);
+        align-items: center;
+        justify-content: center;
+        width: vw(104);
+        height: vw(104);
+        border-radius: 50%;
+        background-color: $light-blue;
+        @include for-md{
+            width: 60px;
+            height: 60px;
+        }
+        @include for-tiny-mob{
+            margin-right: 16px;
+            width: 50px;
+            height: 50px;
+        }
+    }
+    &__open-img{
+        width: 50%;
+    }
+    &__icon{
+        position: relative;
+        margin-left: vw(25);
+        width: 24px;
+        height: 24px;
+        @include for-md{
+            transform: scale(.8);
+        }
+        @include for-tiny-mob{
+            
+            margin-left: auto;
+        }
+        &::after{
+            content: "";
+            position: absolute;
+            width: 3px;
+            height: 24px;
+            background-color: $blue;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: .3s;
+        }
+        &::before{
+            content: "";
+            position: absolute;
+            width: 24px;
+            height: 3px;
+            background-color: $blue;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            transition: .3s;
+        }
+    }
+    &__item-list{
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        font-size: vw(24);
+        line-height: vw(48);
+        overflow: hidden;
+        @include for-md{
+            font-size: 13px;
+            line-height: 25px;
+        }
+        @include for-tiny-mob{
+            font-size: 12px;
+        }
+        &--title{
+            font-weight: 600;
+            &::after{
+                content: "";
+                position: absolute;
+                margin-right: vw(5);
+                border-bottom: 2px dotted $black;
+                width: 100%;
+                bottom: vw(10);
+                z-index: 1;
+            }
+            
+        }
+        &--price{
+            position: relative;
+            z-index: 4;
+            background-color: $white;
+        }
+        
     }
 }
 .modal-content{
